@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-messages.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.js"></script>
+
+	<script src="/js/controller.js"></script>
+
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.css">
+	
+	<title>LIDP Project</title>
+
+</head>
+<body>
+    <div class="container" ng-app="app">
+    	<div ng-controller="Hello" style="padding-left: 30px;">
+    		<h1>Welcome to {{greeting.context}}</h1>
+			<p>The Date is {{greeting.content}}</p>
+			
+		</div>
+		<hr>
+    	<div style="padding-left: 30px;">
+        <h1>Hello {{yourName}}!</h1>
+   			<label>Name:</label>
+    		<input type="text" ng-model="yourName" placeholder="Enter a name here">
+		</div>
+        <hr>
+        <div ng-controller="postcontroller" style="padding-left: 30px;">
+            <form class="form-horizontal" name="customerForm" ng-submit="submitForm()">
+                <div class="form-group">
+                    <h1>Circumference Calculator</h1>
+                    <label class="control-label col-sm-2" for="firstnameID">Radius:</label>
+
+                        <input type="number" class="form-control" name="firstname" id="firstnameID"
+                               placeholder="Enter Radius" ng-model="firstname"/>
+
+                        <button type="submit" class="btn btn-default">Calculate</button>
+                </div>
+            </form>
+            <p>Circumference = {{postResultMessage}}</p>
+            
+        </div>
+        <hr>
+        
+        <div ng-controller="processors" style="padding-left: 30px;">
+        	<h1>My Computer</h1>
+			<p>Processor: {{processors.content}} cores</p>
+			<p>CPU Usage: {{processors.cpuUsage}}%</p>
+			<p>RAM (Usage/Total):  {{processors.usedMem}} / {{processors.maxMem}} Kilobytes (KBs)</p>
+			<p>Hard Drive Space (Usage/Total): {{processors.inUse}} / {{processors.totalFree}} Gigabytes (GBs)</p>
+		</div>
+</div>
+		<hr>
+		<div>
+    	</div>
+
+</body>
+
+
+</html>
+
